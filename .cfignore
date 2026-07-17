@@ -1,0 +1,6 @@
+.git/
+supabase/
+SETUP.md
+README.md
+config.example.js
+wrangler.toml

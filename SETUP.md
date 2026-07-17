@@ -19,7 +19,9 @@ Never put these values in `config.js` or GitHub:
 
 ```bash
 supabase secrets set OPENAI_API_KEY=YOUR_OPENAI_API_KEY
-supabase secrets set OPENAI_MODEL=gpt-5.6-terra
+supabase secrets set OPENAI_MODEL_SOL=gpt-5.6-sol
+supabase secrets set OPENAI_MODEL_TERRA=gpt-5.6-terra
+supabase secrets set OPENAI_MODEL_LUNA=gpt-5.6-luna
 supabase functions deploy agent
 ```
 
@@ -56,3 +58,16 @@ Enable email OTP/magic-link authentication and customize the email template if d
 - Complete privacy, retention and consent review.
 - Add OpenAI usage limits and monitoring.
 - Run security, accessibility and agent-quality evaluations before public onboarding.
+
+## 6. Deploy the frontend to Cloudflare Pages
+
+The repository includes `wrangler.toml`, `_headers`, `_redirects` and `.cfignore`.
+
+Direct upload:
+
+```bash
+npx wrangler login
+npx wrangler pages deploy . --project-name career-navigator-ai
+```
+
+Alternatively, connect the GitHub repository to Cloudflare Pages with production branch `main`, build command `exit 0` and output directory `.`. Add the final `*.pages.dev` URL to the Supabase authentication redirect allow-list.
