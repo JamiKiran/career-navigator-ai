@@ -171,5 +171,5 @@ enableUniversalCopilot();
 document.querySelectorAll('.plans-grid .market-start,.plans-grid .showcase-button').forEach(b=>b.addEventListener('click',()=>{if(!read())setTimeout(()=>openProfile(true),340)}));
 if(new URLSearchParams(location.search).get('app')==='1'&&!profile)setTimeout(()=>openProfile(true),450);
 window.CareerNavigatorProfile={open:openProfile,get:read,apply};
-const holisticScript=document.createElement('script');holisticScript.src='holistic-functions.js';document.head.appendChild(holisticScript);
+const productionStyle=document.createElement('link');productionStyle.rel='stylesheet';productionStyle.href='production-runtime.css';document.head.appendChild(productionStyle);const productionScript=document.createElement('script');productionScript.src='production-runtime.js';document.head.appendChild(productionScript);
 })();

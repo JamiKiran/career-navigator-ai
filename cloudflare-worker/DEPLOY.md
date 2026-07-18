@@ -7,7 +7,11 @@ then run:
 
 1. `npm install`
 2. `npx wrangler login`
-3. `npm run deploy`
+3. `npx wrangler secret put OPENAI_API_KEY`
+4. Optional: `npx wrangler secret put OPENAI_MODEL` and enter `gpt-5.6-terra`.
+5. `npm run deploy`
+
+Never place the OpenAI key in `public/config.js`.
 
 ## Cloudflare dashboard static-asset upload
 
