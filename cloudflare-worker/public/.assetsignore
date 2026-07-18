@@ -1,0 +1,8 @@
+wrangler.jsonc
+package.json
+package-lock.json
+DEPLOY.md
+.git
+.git/**
+supabase
+supabase/**
