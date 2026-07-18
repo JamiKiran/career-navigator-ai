@@ -1,5 +1,6 @@
 (()=>{
 'use strict';
+if(window.__CAREER_IMPACT_INDEX_LOADED__)return;window.__CAREER_IMPACT_INDEX_LOADED__=true;
 const STORE='careerNavigatorImpactIndexV1',PROFILE='careerNavigatorUserProfileV1',CONSENT='ciiConsentV1',VERSION='1.0';
 const defs=[
  {id:'experience',name:'Professional experience',weight:15,hint:'Career progression and scope'},
@@ -51,4 +52,3 @@ function openModal(){modal.classList.add('open')}function closeModal(){modal.cla
 nav.addEventListener('click',()=>{if(typeof go==='function')go('impact');if(!read(CONSENT,{}).accepted)showConsent()});document.getElementById('impactStage').onchange=e=>{state.stage=e.target.value;render();notify('Benchmark updated and score recalculated')};document.getElementById('impactAdd').onclick=()=>addEvidence();document.getElementById('impactAddSmall').onclick=()=>addEvidence();document.getElementById('impactEmptyAdd').onclick=()=>addEvidence();document.getElementById('impactMethod').onclick=method;document.getElementById('impactShare').onclick=share;document.getElementById('impactExport').onclick=exportData;modal.onclick=e=>{if(e.target===modal)closeModal()};document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
 render();
 })();
-
